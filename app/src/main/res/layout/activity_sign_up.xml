@@ -1,90 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.artik.fastchat.SignUpActivity"
-    android:orientation="vertical">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bridge">
 
-    <LinearLayout
-        android:orientation="vertical"
-
-        android:layout_below="@id/image_message"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-
-
-        <android.support.design.widget.TextInputLayout
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="16dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_icon_chat"/>
+
             <EditText
                 android:id="@+id/singup_editLogin"
-                android:hint="Введите ваш логин"
-                android:padding="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:background="@android:color/transparent"
+                android:padding="12dp"
+                android:drawablePadding="12dp"
+                android:hint="Введите логин"
+                android:textColorHint="#fff"
+                android:drawableLeft="@drawable/ic_person_white_24dp"/>
 
-        </android.support.design.widget.TextInputLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f9d7db" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/singup_editPassword"
-                android:hint="Введите ваш пароль"
-                android:padding="5dp"
-                android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="12dp"
+                android:hint="Введите пароль"
+                android:textColorHint="#fff"
+                android:background="@android:color/transparent"
+                android:maxLines="1"
+                android:layout_marginTop="4dp"
+                android:drawableLeft="@drawable/ic_lock_white_24dp"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f9d7db" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/singup_editFullName"
-                android:hint="Фамилия, Имя"
-                android:padding="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:background="@android:color/transparent"
+                android:padding="12dp"
+                android:drawablePadding="12dp"
+                android:hint="Введите Имя и Фамилию"
+                android:textColorHint="#fff"
+                android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"/>
 
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
-        <Button
-            android:id="@+id/singup_btnSingUp"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:text="SingUp"
-            android:layout_marginRight="5dp"
-            android:width="0dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/singup_btnCancel"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-
-            android:background="#01579B"
-            android:textColor="@color/colorAccent"
-            android:text="Cancel"
-            android:layout_marginRight="5dp"
-            android:width="0dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f9d7db" />
 
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/singup_btnSingUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:text="Зарегистирировать"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:clickable="true"
+                android:textSize="18sp"
+                android:textColor="#f16f71"
+                android:padding="16dp"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="32dp"/>
+
+            <Button
+                android:id="@+id/singup_btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f08b98"
+                android:text="Отмена"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:clickable="true"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#fff"
+                android:padding="16dp"
+                android:clickable="true"
+                android:layout_marginBottom="16dp"
+                style="@style/TextAppearance.AppCompat.Body1"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

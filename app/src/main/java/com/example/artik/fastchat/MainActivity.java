@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         initializeFramework();
 
         btnLogin = findViewById(R.id.main_btnLogin);
-        btnSignup = findViewById(R.id.main_btnSignup);
+        btnSignup = findViewById(R.id.main_btnSignUp);
 
         edtPassword = findViewById(R.id.main_editPassword);
         edtUser = findViewById(R.id.main_editLogin);
