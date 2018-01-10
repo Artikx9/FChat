@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.ToolbarWidgetWrapper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,8 +25,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amulyakhare.textdrawable.TextDrawable;
+import com.bhargavms.dotloader.DotLoader;
 import com.example.artik.fastchat.Adapter.ChatMessageAdapter;
 import com.example.artik.fastchat.Common.Common;
+import com.example.artik.fastchat.Holder.QBChatDialogHolder;
 import com.example.artik.fastchat.Holder.QBChatMessagesHolder;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.chat.QBIncomingMessagesManager;
@@ -71,6 +75,8 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
     //Update dialog
     android.support.v7.widget.Toolbar toolbar;
 
+    //Typing
+    DotLoader dotLoader;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
@@ -278,6 +284,10 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
 
             }
         });
+
+        registerTypingForChatDialog(qbChatDialog);
+
+
         if(qbChatDialog.getType() == QBDialogType.PUBLIC_GROUP || qbChatDialog.getType() == QBDialogType.GROUP)
         {
             DiscussionHistory discussionHistory = new DiscussionHistory();
@@ -344,6 +354,23 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
 
     }
 
+    private void registerTypingForChatDialog(QBChatDialog qbChatDialog) {
+        QBChatDialogTypingListener typingListener = new QBChatDialogTypingListener() {
+            @Override
+            public void processUserIsTyping(String dialogId, Integer integer) {
+                if(dotLoader.getVisibility() != View.VISIBLE)
+                    dotLoader.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void processUserStopTyping(String dialogId, Integer integer) {
+                 if(dotLoader.getVisibility() != View.INVISIBLE)
+                     dotLoader.setVisibility(View.INVISIBLE);
+            }
+        };
+        qbChatDialog.addIsTypingListener(typingListener);
+    }
+
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
@@ -402,9 +429,44 @@ public class ChatMessageActivity extends AppCompatActivity implements QBChatDial
 
     private void initViews() {
 
+        dotLoader =(DotLoader)findViewById(R.id.dot_loader);
         lstChatMessages = (ListView)findViewById(R.id.list_of_message);
         submitButton = (ImageButton)findViewById(R.id.send_button);
         edtContent = (EditText)findViewById(R.id.edt_content);
+        edtContent.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                try {
+                    qbChatDialog.sendIsTypingNotification();
+                } catch (XMPPException e) {
+                    e.printStackTrace();
+                } catch (SmackException.NotConnectedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                try {
+                    qbChatDialog.sendIsTypingNotification();
+                } catch (XMPPException e) {
+                    e.printStackTrace();
+                } catch (SmackException.NotConnectedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                try {
+                    qbChatDialog.sendStopTypingNotification();
+                } catch (XMPPException e) {
+                    e.printStackTrace();
+                } catch (SmackException.NotConnectedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         img_online_count = (ImageView)findViewById(R.id.img_online_count);
         txt_online_count = (TextView)findViewById(R.id.txt_online_count);

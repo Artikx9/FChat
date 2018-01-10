@@ -29,6 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     //Libary
+    compile 'com.github.bhargavms:DotLoader:1.0.3'
     compile "com.android.support:support-core-utils:26.+"
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.quickblox:quickblox-android-sdk-core:3.3.0'
