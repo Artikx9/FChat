@@ -45,6 +45,7 @@
                 android:inputType="textEmailAddress"
                 android:background="@android:color/transparent"
                 android:drawablePadding="12dp"
+                android:textColor="#fff"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:paddingTop="8dp"
@@ -61,7 +62,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db"
+                android:background="#2ac28a"
                 />
 
 
@@ -71,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
+                android:textColor="#fff"
                 android:drawablePadding="12dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
@@ -87,7 +89,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db"
+                android:background="#2ac28a"
                 />
 
 
@@ -97,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:ems="20"
+                android:textColor="#fff"
                 android:drawablePadding="12dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
@@ -113,7 +116,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db"
+                android:background="#2ac28a"
                 />
 
 
@@ -123,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
+                android:textColor="#fff"
                 android:drawablePadding="12dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
@@ -138,7 +142,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db"
+                android:background="#2ac28a"
                 />
 
 
@@ -148,6 +152,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
+                android:textColor="#fff"
                 android:drawablePadding="12dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
@@ -164,7 +169,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db"
+                android:background="#2ac28a"
                 />
 
 
@@ -185,7 +190,7 @@
                 android:textStyle="normal"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
                 android:textSize="18sp"
-                android:textColor="#f16f7d"
+                android:textColor="#2ac28a"
                 android:padding="16dp"
                 android:clickable="true"
                 android:layout_marginTop="24dp" />

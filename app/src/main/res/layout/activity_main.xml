@@ -34,6 +34,7 @@ android:background="@drawable/new_login_gradients">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:textColor="#fff"
             android:ems="10"
             android:background="@android:color/transparent"
             android:drawablePadding="12dp"
@@ -45,7 +46,7 @@ android:background="@drawable/new_login_gradients">
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#f9d7db" />
+            android:background="#09f476" />
         <EditText
             android:id="@+id/main_editPassword"
             android:hint="Введите ваш пароль"
@@ -53,6 +54,7 @@ android:background="@drawable/new_login_gradients">
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
+            android:textColor="#fff"
             android:drawablePadding="12dp"
             android:padding="8dp"
             android:textColorHint="#fff"
@@ -64,7 +66,7 @@ android:background="@drawable/new_login_gradients">
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#f9d7db" />
+            android:background="#0def1c" />
 
 
 
@@ -73,8 +75,8 @@ android:background="@drawable/new_login_gradients">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_login"
-            android:text="Log in"
-            android:textColor="#f16f7d"
+            android:text="Войти"
+            android:textColor="#51ca85"
             android:textAllCaps="false"
             android:padding="16dp"
             android:clickable="true"
@@ -87,7 +89,7 @@ android:background="@drawable/new_login_gradients">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_signup"
-            android:text="Sign up"
+            android:text="Создать"
             style="@style/Base.TextAppearance.AppCompat.Body1"
             android:textColor="#fff"
             android:textAllCaps="false"

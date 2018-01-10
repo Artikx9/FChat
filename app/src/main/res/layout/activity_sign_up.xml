@@ -8,7 +8,7 @@
     android:paddingLeft="18dp"
     android:paddingRight="18dp"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bridge">
+    android:background="@drawable/new_login_gradients">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:ems="10"
+                android:textColor="#fff"
                 android:background="@android:color/transparent"
                 android:padding="12dp"
                 android:drawablePadding="12dp"
@@ -43,7 +44,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db" />
+                android:background="#2ac28a" />
 
             <EditText
                 android:id="@+id/singup_editPassword"
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
+                android:textColor="#fff"
                 android:drawablePadding="12dp"
                 android:padding="12dp"
                 android:hint="Введите пароль"
@@ -63,24 +65,25 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db" />
+                android:background="#2ac28a" />
 
             <EditText
                 android:id="@+id/singup_editFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textColor="#fff"
                 android:background="@android:color/transparent"
                 android:padding="12dp"
                 android:drawablePadding="12dp"
                 android:hint="Введите Имя и Фамилию"
                 android:textColorHint="#fff"
-                android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"/>
+                android:drawableLeft="@drawable/ic_person_white_24dp"/>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#f9d7db" />
+                android:background="#2ac28a" />
 
 
             <Button
@@ -93,7 +96,7 @@
                 android:textStyle="normal"
                 android:clickable="true"
                 android:textSize="18sp"
-                android:textColor="#f16f71"
+                android:textColor="#2ac28a"
                 android:padding="16dp"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_marginTop="32dp"/>
@@ -102,7 +105,7 @@
                 android:id="@+id/singup_btnCancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#f08b98"
+                android:background="#2ac28a"
                 android:text="Отмена"
                 android:textAllCaps="false"
                 android:textColor="#fff"
